@@ -25,7 +25,7 @@ jobs:
       # 上传到 Mirror酱
       - name: Upload to MirrorChyan
         run: |
-          curl --location --request POST 'https://mirrorc.top/api/resources/${{ github.event.repository.name }}/versions' \
+          curl --location --request POST 'https://test.mirrorc.xtbs.top/api/resources/${{ github.event.repository.name }}/versions' \
             --header 'Authorization:${{ secrets.MirrorChyanUploadToken }}' \
             --form 'name="${{steps.download.outputs.tag_name}}"' \
             --form 'file=@"${{ fromJson(steps.download.outputs.downloaded_files)[0] }}"'
